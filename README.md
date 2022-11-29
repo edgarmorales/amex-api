@@ -2,7 +2,6 @@
 This project encapsulates an Order Service used to create, edit, view, and delete Orders for a fictious company. Below are the list of additional models used to encapsulate and process orders.
 
 
-
 # Services
 
 ## OrderService
@@ -69,6 +68,24 @@ The order service includes methods to create, edit, view and delete orders.
   }
 ]
 ```
+### Endpoint: Create a new Order
+`POST /api/order`
+
+```json
+// TODO: Provide more details
+```
+### Endpoint: Lookup a specific Order
+`GET /api/order/{id}`
+
+```json
+// TODO: Provide more details
+```
+### Endpoint: Delete a specific Order
+`DELETE /api/order/{id}`
+
+```json
+// TODO: Provide more details
+```
 
 ## AssociateService
 The Associate Service include methods to create, edit, view, and delete company associates (who faciliate an order submission).
@@ -88,11 +105,29 @@ The Associate Service include methods to create, edit, view, and delete company 
   }
 ]
 ```
+### Endpoint: Create a new Associate
+`POST /api/associate`
+
+```json
+// TODO: Provide more details
+```
+### Endpoint: Lookup a specific Associate
+`GET /api/associate/{id}`
+
+```json
+// TODO: Provide more details
+```
+### Endpoint: Delete a specific Associate
+`DELETE /api/associate/{id}`
+
+```json
+// TODO: Provide more details
+```
 
 ## CustomerService
 The Customer Service include methods to create, edit, view, and delete customers.
 
-### Endpoint:
+### Endpoint: View Customers
 
 `GET /api/customers`
 ```json
@@ -126,6 +161,25 @@ The Customer Service include methods to create, edit, view, and delete customers
   }
 ]
 ```
+### Endpoint: Create a new Customer
+`POST /api/customer`
+
+```json
+// TODO: Provide more details
+```
+### Endpoint: Lookup a specific Customer
+`GET /api/customer/{id}`
+
+```json
+// TODO: Provide more details
+```
+### Endpoint: Delete a specific Customer
+`DELETE /api/customer/{id}`
+
+```json
+// TODO: Provide more details
+```
+
 
 ## ProductService
 The product service includes methods to create, edit, view and delete products.
@@ -161,3 +215,28 @@ The product service includes methods to create, edit, view and delete products.
   }
 ]
 ```
+### Endpoint: Create a new Product
+`POST /api/product`
+
+```json
+// TODO: Provide more details
+```
+### Endpoint: Lookup a specific Product
+`GET /api/product/{id}`
+
+```json
+// TODO: Provide more details
+```
+### Endpoint: Delete a specific Product
+`DELETE /api/product/{id}`
+
+```json
+// TODO: Provide more details
+```
+
+
+
+# Testing
+Unit tests as well as integration tests are located within the `src/test/java/com/amex/api` directory.
+
+`// TODO: Provide more details`
