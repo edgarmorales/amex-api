@@ -61,7 +61,7 @@ public class Order {
     }
 
     @JsonFormat(shape=JsonFormat.Shape.STRING)
-    public BigDecimal getTotalDiscountedPrice() {
+    public BigDecimal getTotalOrderDiscountPrice() {
         BigDecimal sum = new BigDecimal(0.00);
         List<OrderItem> items = getOrderItems();
         for (OrderItem item : items) {
