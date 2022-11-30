@@ -89,59 +89,6 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
     "dateModified": "2022-11-30 02:38:48",
     "totalOrderNetPrice": "2.00",
     "totalOrderDiscountPrice": "2.00"
-  },
-  {
-    "id": 2,
-    "customer": {
-      "id": 1,
-      "email": "sophie.bon-customer@gmail.com",
-      "firstName": "Sophie",
-      "lastName": "Bon-Customer",
-      "cellphone": "917-555-5555",
-      "dateCreated": "2022-11-30 02:38:48",
-      "dateModified": "2022-11-30 02:38:48"
-    },
-    "associate": {
-      "id": 1,
-      "email": "edgar.bon-associate@amex.com",
-      "storeId": "12345",
-      "firstName": "Edgar",
-      "lastName": "Bon-Associate",
-      "cellphone": "917-222-2222",
-      "hireDate": "2022-11-30 02:38:48"
-    },
-    "orderItems": [
-      {
-        "quantity": 2,
-        "totalProductDiscountPrice": "1.00",
-        "product": {
-          "id": 1,
-          "name": "Apple",
-          "description": "A delicious red apple from the apple orchards at Morales Farms",
-          "price": "1.00",
-          "dateCreated": "2022-11-30 02:38:48",
-          "dateModified": "2022-11-30 02:38:48"
-        },
-        "totalProductNetPrice": "2.00"
-      },
-      {
-        "quantity": 2,
-        "totalProductDiscountPrice": "2.00",
-        "product": {
-          "id": 2,
-          "name": "Orange",
-          "description": "A plump, juicy orange from the orange groves at Morales Farms",
-          "price": "1.00",
-          "dateCreated": "2022-11-30 02:38:48",
-          "dateModified": "2022-11-30 02:38:48"
-        },
-        "totalProductNetPrice": "2.00"
-      }
-    ],
-    "dateCreated": "2022-11-30 02:38:48",
-    "dateModified": "2022-11-30 02:38:48",
-    "totalOrderNetPrice": "4.00",
-    "totalOrderDiscountPrice": "3.00"
   }
 ]
 ```
