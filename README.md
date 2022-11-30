@@ -23,7 +23,6 @@ src/main/java/com/amex/api/data/OrderItem.java
 src/main/java/com/amex/api/data/OrderItemPk.java
 src/main/java/com/amex/api/data/Associate.java
 src/main/java/com/amex/api/data/Customer.java
-
 ```
 
 ### Tests
