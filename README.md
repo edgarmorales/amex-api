@@ -45,8 +45,8 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
       "firstName": "Sophie",
       "lastName": "Bon-Customer",
       "cellphone": "917-555-5555",
-      "dateCreated": "2022-11-29 08:44:36",
-      "dateModified": "2022-11-29 08:44:36"
+      "dateCreated": "2022-11-30 02:38:48",
+      "dateModified": "2022-11-30 02:38:48"
     },
     "associate": {
       "id": 1,
@@ -55,40 +55,93 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
       "firstName": "Edgar",
       "lastName": "Bon-Associate",
       "cellphone": "917-222-2222",
-      "hireDate": "2022-11-29 08:44:36"
+      "hireDate": "2022-11-30 02:38:48"
     },
     "orderItems": [
       {
-        "quantity": 10,
+        "quantity": 1,
+        "totalProductDiscountPrice": "1.00",
         "product": {
           "id": 1,
           "name": "Apple",
           "description": "A delicious red apple from the apple orchards at Morales Farms",
-          "price": "0.60",
-          "dateCreated": "2022-11-29 08:44:36",
-          "dateModified": "2022-11-29 08:44:36"
+          "price": "1.00",
+          "dateCreated": "2022-11-30 02:38:48",
+          "dateModified": "2022-11-30 02:38:48"
         },
-        "totalProductNetPrice": "6.00",
-        "totalProductDiscountPrice": "3.00"
+        "totalProductNetPrice": "1.00"
       },
       {
-        "quantity": 10,
+        "quantity": 1,
+        "totalProductDiscountPrice": "1.00",
         "product": {
           "id": 2,
           "name": "Orange",
           "description": "A plump, juicy orange from the orange groves at Morales Farms",
-          "price": "0.25",
-          "dateCreated": "2022-11-29 08:44:36",
-          "dateModified": "2022-11-29 08:44:36"
+          "price": "1.00",
+          "dateCreated": "2022-11-30 02:38:48",
+          "dateModified": "2022-11-30 02:38:48"
         },
-        "totalProductNetPrice": "2.50",
-        "totalProductDiscountPrice": "1.70"
+        "totalProductNetPrice": "1.00"
       }
     ],
-    "dateCreated": "2022-11-29 08:44:36",
-    "dateModified": "2022-11-29 08:44:36",
-    "totalOrderNetPrice": "8.50",
-    "totalDiscountedPrice": "4.70"
+    "dateCreated": "2022-11-30 02:38:48",
+    "dateModified": "2022-11-30 02:38:48",
+    "totalOrderNetPrice": "2.00",
+    "totalOrderDiscountPrice": "2.00"
+  },
+  {
+    "id": 2,
+    "customer": {
+      "id": 1,
+      "email": "sophie.bon-customer@gmail.com",
+      "firstName": "Sophie",
+      "lastName": "Bon-Customer",
+      "cellphone": "917-555-5555",
+      "dateCreated": "2022-11-30 02:38:48",
+      "dateModified": "2022-11-30 02:38:48"
+    },
+    "associate": {
+      "id": 1,
+      "email": "edgar.bon-associate@amex.com",
+      "storeId": "12345",
+      "firstName": "Edgar",
+      "lastName": "Bon-Associate",
+      "cellphone": "917-222-2222",
+      "hireDate": "2022-11-30 02:38:48"
+    },
+    "orderItems": [
+      {
+        "quantity": 2,
+        "totalProductDiscountPrice": "1.00",
+        "product": {
+          "id": 1,
+          "name": "Apple",
+          "description": "A delicious red apple from the apple orchards at Morales Farms",
+          "price": "1.00",
+          "dateCreated": "2022-11-30 02:38:48",
+          "dateModified": "2022-11-30 02:38:48"
+        },
+        "totalProductNetPrice": "2.00"
+      },
+      {
+        "quantity": 2,
+        "totalProductDiscountPrice": "2.00",
+        "product": {
+          "id": 2,
+          "name": "Orange",
+          "description": "A plump, juicy orange from the orange groves at Morales Farms",
+          "price": "1.00",
+          "dateCreated": "2022-11-30 02:38:48",
+          "dateModified": "2022-11-30 02:38:48"
+        },
+        "totalProductNetPrice": "2.00"
+      }
+    ],
+    "dateCreated": "2022-11-30 02:38:48",
+    "dateModified": "2022-11-30 02:38:48",
+    "totalOrderNetPrice": "4.00",
+    "totalOrderDiscountPrice": "3.00"
   }
 ]
 ```
@@ -117,16 +170,20 @@ The Associate Service include methods to create, edit, view, and delete company 
 ### Paths:
 ###### Controller Path
 `src/main/java/com/amex/api/controller/AssociateController.java`
+
 ###### Service Interface/Impl Paths
-`src/main/java/com/amex/api/service/AssociateService.java`
-`src/main/java/com/amex/api/service/AssociateServiceImpl.java`
+```
+src/main/java/com/amex/api/service/AssociateService.java
+src/main/java/com/amex/api/service/AssociateServiceImpl.java
+```
 ###### Data Models Path:
 `src/main/java/com/amex/api/data/Associate.java`
 
 ### Tests:
-`src/test/java/com/amex/api/service/AssociateServiceTests.java`
-`src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java`
-
+```
+src/test/java/com/amex/api/service/AssociateServiceTests.java
+src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
+```
 
 ### Endpoints:
 `GET /api/associates`
@@ -162,7 +219,7 @@ The Associate Service include methods to create, edit, view, and delete company 
 ```
  # add details
 ```
-#
+##
 ## CustomerService
 The Customer Service include methods to create, edit, view, and delete customers.
 
