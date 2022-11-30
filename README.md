@@ -1,30 +1,39 @@
 # AMEX API 
-This project encapsulates an Order Service used to create, edit, view, and delete Orders for a fictious company. Below are the list of additional models used to encapsulate and process orders.
+This project encapsulates an API Service used to create, edit, view, and delete Orders for a fictitious company. 
+Below are the list of additional models, services, used to encapsulate and process orders.
 
 
-# Services
+# Services:
 
 ## OrderService
-The order service includes methods to create, edit, view and delete orders.
+The order service includes methods to create, edit, view and delete customer orders. **Orders** include **Associate**, **Customer**, and a list of **OrderItem** objects.
 
-### Paths:
+### Paths
 ###### Controller Path
 `src/main/java/com/amex/api/controller/OrderController.java`
 ###### Service Interface/Impl Paths
-`src/main/java/com/amex/api/service/OrderService.java` 
-`src/main/java/com/amex/api/service/OrderServiceImpl.java`
-###### Data Models Path:
-`src/main/java/com/amex/api/data/Order.java`
-`src/main/java/com/amex/api/data/OrderItem.java`
-`src/main/java/com/amex/api/data/OrderItemPk.java`
+```
+src/main/java/com/amex/api/service/OrderService.java 
+src/main/java/com/amex/api/service/OrderServiceImpl.java
+```
+###### Data Models:
+```
+src/main/java/com/amex/api/data/Order.java
+src/main/java/com/amex/api/data/OrderItem.java
+src/main/java/com/amex/api/data/OrderItemPk.java
+```
 
-### Tests:
-`src/test/java/com/amex/api/service/OrderServiceTests.java`
-`src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java`
+### Tests
+```
+src/test/java/com/amex/api/service/OrderServiceTests.java
+src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
+```
 
-### Endpoint:
+### Endpoints
 
 `GET /api/orders`
+
+###### Description: Returns a collection of known orders.
 
 ```json
 [
@@ -83,27 +92,27 @@ The order service includes methods to create, edit, view and delete orders.
   }
 ]
 ```
-### Endpoint: Create a new Order
+#
 `POST /api/order`
-
-```json
-// TODO: Provide more details
+###### Description: Creates an order
 ```
-### Endpoint: Lookup a specific Order
+ # add details
+```
+#
 `GET /api/order/{id}`
-
-```json
-// TODO: Provide more details
+###### Description: Returns a specific order
 ```
-### Endpoint: Delete a specific Order
+# add details
+```
+#
 `DELETE /api/order/{id}`
-
-```json
-// TODO: Provide more details
+###### Description: Deletes a specific order
 ```
-
+# add details
+```
+###
 ## AssociateService
-The Associate Service include methods to create, edit, view, and delete company associates (who faciliate an order submission).
+The Associate Service include methods to create, edit, view, and delete company associates (who faciliates an order submission).
 
 ### Paths:
 ###### Controller Path
@@ -119,8 +128,9 @@ The Associate Service include methods to create, edit, view, and delete company 
 `src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java`
 
 
-### Endpoint:
+### Endpoints:
 `GET /api/associates`
+###### Description: Returns all known Associates
 ```json
 [
   {
@@ -134,25 +144,25 @@ The Associate Service include methods to create, edit, view, and delete company 
   }
 ]
 ```
-### Endpoint: Create a new Associate
+###
 `POST /api/associate`
-
-```json
-// TODO: Provide more details
+###### Description: Create a new Associate
 ```
-### Endpoint: Lookup a specific Associate
+ # add details
+```
+###
 `GET /api/associate/{id}`
-
-```json
-// TODO: Provide more details
+###### Description: Retrieve a specific Associate
 ```
-### Endpoint: Delete a specific Associate
+ # add details
+```
+###
 `DELETE /api/associate/{id}`
-
-```json
-// TODO: Provide more details
+###### Description: Delete a specific Associate
 ```
-
+ # add details
+```
+#
 ## CustomerService
 The Customer Service include methods to create, edit, view, and delete customers.
 
@@ -170,9 +180,10 @@ The Customer Service include methods to create, edit, view, and delete customers
 `src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java`
 
 
-### Endpoint: View Customers
+### Endpoint:
 
 `GET /api/customers`
+###### Description: Returns all known Customers
 ```json
 [
   {
@@ -204,26 +215,26 @@ The Customer Service include methods to create, edit, view, and delete customers
   }
 ]
 ```
-### Endpoint: Create a new Customer
+###
 `POST /api/customer`
-
-```json
-// TODO: Provide more details
+###### Description: Create a new Customer
 ```
-### Endpoint: Lookup a specific Customer
+ # add details
+```
+###
 `GET /api/customer/{id}`
-
-```json
-// TODO: Provide more details
+###### Description: Retrieves a specific Customer
 ```
-### Endpoint: Delete a specific Customer
+ # add details
+```
+###
 `DELETE /api/customer/{id}`
-
-```json
-// TODO: Provide more details
+###### Description: Deletes a specific Customer
+```
+ # add details
 ```
 
-
+#
 ## ProductService
 The product service includes methods to create, edit, view and delete products.
 
@@ -272,28 +283,30 @@ The product service includes methods to create, edit, view and delete products.
   }
 ]
 ```
-### Endpoint: Create a new Product
+###
 `POST /api/product`
-
-```json
-// TODO: Provide more details
+###### Description: Create a new Product
 ```
-### Endpoint: Lookup a specific Product
+ # add details
+```
+###
 `GET /api/product/{id}`
-
-```json
-// TODO: Provide more details
+###### Description: Retrieves a specific Product
 ```
-### Endpoint: Delete a specific Product
+ # add details
+```
+###
 `DELETE /api/product/{id}`
-
-```json
-// TODO: Provide more details
+###### Description: Deletes a specific Product
+```
+ # add details
 ```
 
-
+#
 
 # Testing
 Unit tests as well as integration tests are located within the `src/test/java/com/amex/api` directory.
 
-`// TODO: Provide more details`
+```
+ # add details
+```
