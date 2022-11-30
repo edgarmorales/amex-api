@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import static com.amex.api.utils.OrderItemUtils.CalculateDiscountPrice;
 import static com.amex.api.utils.OrderItemUtils.CalculateNetPriceStrategy;
@@ -36,7 +37,10 @@ public class OrderItem {
 
     @JsonFormat(shape=JsonFormat.Shape.STRING)
     public BigDecimal getTotalProductDiscountPrice() {
-        return CalculateDiscountPrice(getProduct(), getQuantity());
+        BigDecimal discountPrice = CalculateDiscountPrice(getProduct(), getQuantity());
+        BigDecimal roundedNearestInt = discountPrice.setScale(0, RoundingMode.HALF_EVEN);
+        BigDecimal roundedPrice = roundedNearestInt.setScale(2, RoundingMode.HALF_EVEN);
+        return roundedPrice;
     }
 
     public OrderItem(Order order, Product product, Integer quantity) {

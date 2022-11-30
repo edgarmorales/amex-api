@@ -52,7 +52,7 @@ public class OrderServiceTests {
         Assertions.assertThat(refreshedOrder.getOrderItems()).hasSize(1);
 
         Assertions.assertThat(refreshedOrder.getTotalOrderNetPrice()).isEqualTo(new BigDecimal("1.00"));
-        Assertions.assertThat(refreshedOrder.getTotalDiscountedPrice()).isEqualTo(new BigDecimal("1.00"));
+        Assertions.assertThat(refreshedOrder.getTotalOrderDiscountPrice()).isEqualTo(new BigDecimal("1.00"));
 
         OrderItem refreshedOrderItem = refreshedOrder.getOrderItems().stream().findFirst().get();
         Assertions.assertThat(refreshedOrderItem.getProduct()).isNotNull();
