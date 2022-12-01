@@ -1,7 +1,6 @@
 package com.amex.api.data;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -17,9 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "orders")
-@Getter
-@Setter
-@NoArgsConstructor
+@Getter @Setter @NoArgsConstructor
 public class Order {
 
     @Id
@@ -34,7 +31,6 @@ public class Order {
     @ManyToOne
     private Associate associate;
 
-    @JsonManagedReference
     @OneToMany(mappedBy = "pk.order", fetch = FetchType.EAGER)
     @Valid
     private List<OrderItem> orderItems = new ArrayList<>();
@@ -61,6 +57,7 @@ public class Order {
     }
 
     @JsonFormat(shape=JsonFormat.Shape.STRING)
+    @JsonIgnore
     public BigDecimal getTotalOrderDiscountPrice() {
         BigDecimal sum = new BigDecimal(0.00);
         List<OrderItem> items = getOrderItems();
