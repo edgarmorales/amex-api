@@ -98,7 +98,20 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
 `POST /api/order`
 ###### Description: Creates an order
 ```
- # add details
+curl -i \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X POST --data '{"customer_id" :1, "associate_id": 1, "order_items": [{"quantity": 10, "product_id": 1 }]}' \
+http://localhost:8080/api/order
+```
+###### Response
+```
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 01 Dec 2022 04:33:00 GMT
+
+{"id":11,"customer":{"id":1,"email":"sophie.bon-customer@gmail.com","firstName":"Sophie","lastName":"Bon-Customer","cellphone":"917-555-5555","dateCreated":"2022-12-01 04:25:11","dateModified":"2022-12-01 04:25:11"},"associate":{"id":1,"email":"edgar.bon-associate@amex.com","storeId":"12345","firstName":"Edgar","lastName":"Bon-Associate","cellphone":"917-222-2222","hireDate":"2022-12-01 04:25:11"},"orderItems":[{"quantity":10,"totalProductNetPrice":"10.00","product":{"id":1,"name":"Apple","description":"A delicious red apple from the apple orchards at Morales Farms","price":"1.00","dateCreated":"2022-12-01 04:25:11","dateModified":"2022-12-01 04:25:11"},"totalProductDiscountPrice":"5.00"}],"dateCreated":"2022-12-01 04:33:00","dateModified":"2022-12-01 04:33:00","totalOrderNetPrice":"10.00"}
 ```
 #
 `GET /api/order/{id}`
