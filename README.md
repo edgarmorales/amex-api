@@ -38,8 +38,8 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
 ###### Description: Returns a collection of known orders.
 
 ```json
-[
-  {
+{
+  "data": {
     "id": 1,
     "customer": {
       "id": 1,
@@ -47,8 +47,8 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
       "firstName": "Sophie",
       "lastName": "Bon-Customer",
       "cellphone": "917-555-5555",
-      "dateCreated": "2022-11-30 02:38:48",
-      "dateModified": "2022-11-30 02:38:48"
+      "dateCreated": "2022-12-04 16:16:30",
+      "dateModified": "2022-12-04 16:16:30"
     },
     "associate": {
       "id": 1,
@@ -57,22 +57,21 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
       "firstName": "Edgar",
       "lastName": "Bon-Associate",
       "cellphone": "917-222-2222",
-      "hireDate": "2022-11-30 02:38:48"
+      "hireDate": "2022-12-04 16:16:30"
     },
-    "orderItems": [
-      {
-        "quantity": 1,
-        "totalProductDiscountPrice": "1.00",
-        "product": {
-          "id": 1,
-          "name": "Apple",
-          "description": "A delicious red apple from the apple orchards at Morales Farms",
-          "price": "1.00",
-          "dateCreated": "2022-11-30 02:38:48",
-          "dateModified": "2022-11-30 02:38:48"
-        },
-        "totalProductNetPrice": "1.00"
+    "orderItems": [{
+      "quantity": 1,
+      "totalProductDiscountPrice": "1.00",
+      "product": {
+        "id": 1,
+        "name": "Apple",
+        "description": "A delicious red apple from the apple orchards at Morales Farms",
+        "price": "1.00",
+        "dateCreated": "2022-12-04 16:16:30",
+        "dateModified": "2022-12-04 16:16:30"
       },
+      "totalProductNetPrice": "1.00"
+    },
       {
         "quantity": 1,
         "totalProductDiscountPrice": "1.00",
@@ -81,18 +80,19 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
           "name": "Orange",
           "description": "A plump, juicy orange from the orange groves at Morales Farms",
           "price": "1.00",
-          "dateCreated": "2022-11-30 02:38:48",
-          "dateModified": "2022-11-30 02:38:48"
+          "dateCreated": "2022-12-04 16:16:30",
+          "dateModified": "2022-12-04 16:16:30"
         },
         "totalProductNetPrice": "1.00"
       }
     ],
-    "dateCreated": "2022-11-30 02:38:48",
-    "dateModified": "2022-11-30 02:38:48",
-    "totalOrderNetPrice": "2.00",
-    "totalOrderDiscountPrice": "2.00"
-  }
-]
+    "dateCreated": "2022-12-04 16:16:30",
+    "dateModified": "2022-12-04 16:16:30",
+    "totalOrderNetPrice": "2.00"
+  },
+  "message": "Successfully retrieved order.",
+  "status": 200
+
 ```
 #
 `POST /api/order`
@@ -117,7 +117,39 @@ Date: Thu, 01 Dec 2022 04:33:00 GMT
 `GET /api/order/{id}`
 ###### Description: Returns a specific order
 ```
-# add details
+curl -i \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+http://localhost:8080/api/order/1
+```
+###### Response:
+```
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Thu, 01 Dec 2022 13:50:27 GMT
+
+{"id":1,"customer":{"id":1,"email":"sophie.bon-customer@gmail.com","firstName":"Sophie","lastName":"Bon-Customer","cellphone":"917-555-5555","dateCreated":"2022-12-01 13:49:58","dateModified":"2022-12-01 13:49:58"},"associate":{"id":1,"email":"edgar.bon-associate@amex.com","storeId":"12345","firstName":"Edgar","lastName":"Bon-Associate","cellphone":"917-222-2222","hireDate":"2022-12-01 13:49:58"},"orderItems":[],"dateCreated":"2022-12-01 13:49:58","dateModified":"2022-12-01 13:50:26","totalOrderNetPrice":"0"}
+```
+#
+`PUT /api/order/{id}`
+###### Description: Updates a specific order
+```
+curl -i \
+-H "Accept: application/json" \
+-H "Content-Type: application/json" \
+-X PUT --data '{"customer_id" :1, "associate_id": 1, "order_items": [{"quantity": 102, "product_id": 1 }]}' \
+http://localhost:8080/api/order/1
+```
+###### Response:
+```
+http://localhost:8080/api/order/1
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sun, 04 Dec 2022 16:13:16 GMT
+
+{"data":{"id":1,"customer":{"id":1,"email":"sophie.bon-customer@gmail.com","firstName":"Sophie","lastName":"Bon-Customer","cellphone":"917-555-5555","dateCreated":"2022-12-04 16:11:26","dateModified":"2022-12-04 16:11:26"},"associate":{"id":1,"email":"edgar.bon-associate@amex.com","storeId":"12345","firstName":"Edgar","lastName":"Bon-Associate","cellphone":"917-222-2222","hireDate":"2022-12-04 16:11:26"},"orderItems":[{"quantity":102,"totalProductNetPrice":"102.00","product":{"id":1,"name":"Apple","description":"A delicious red apple from the apple orchards at Morales Farms","price":"1.00","dateCreated":"2022-12-04 16:11:26","dateModified":"2022-12-04 16:11:26"},"totalProductDiscountPrice":"51.00"}],"dateCreated":"2022-12-04 16:11:26","dateModified":"2022-12-04 16:13:16","totalOrderNetPrice":"102.00"},"message":"Successfully updated order.","status":200}
 ```
 #
 `DELETE /api/order/{id}`
