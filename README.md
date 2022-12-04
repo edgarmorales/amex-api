@@ -40,15 +40,15 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
 ```json
 {
   "data": {
-    "id": 1,
+    "id": 11,
     "customer": {
       "id": 1,
       "email": "sophie.bon-customer@gmail.com",
       "firstName": "Sophie",
       "lastName": "Bon-Customer",
       "cellphone": "917-555-5555",
-      "dateCreated": "2022-12-04 16:16:30",
-      "dateModified": "2022-12-04 16:16:30"
+      "dateCreated": "2022-12-04 16:49:10",
+      "dateModified": "2022-12-04 16:49:10"
     },
     "associate": {
       "id": 1,
@@ -57,42 +57,43 @@ src/test/java/com/amex/api/AmexApiApplicationIntegrationTests.java
       "firstName": "Edgar",
       "lastName": "Bon-Associate",
       "cellphone": "917-222-2222",
-      "hireDate": "2022-12-04 16:16:30"
+      "hireDate": "2022-12-04 16:49:10"
     },
     "orderItems": [{
-      "quantity": 1,
-      "totalProductDiscountPrice": "1.00",
+      "quantity": 8,
+      "totalProductDiscountPrice": "4.00",
+      "totalProductNetPrice": "8.00",
       "product": {
         "id": 1,
         "name": "Apple",
         "description": "A delicious red apple from the apple orchards at Morales Farms",
         "price": "1.00",
-        "dateCreated": "2022-12-04 16:16:30",
-        "dateModified": "2022-12-04 16:16:30"
-      },
-      "totalProductNetPrice": "1.00"
+        "dateCreated": "2022-12-04 16:49:10",
+        "dateModified": "2022-12-04 16:49:10"
+      }
     },
       {
-        "quantity": 1,
-        "totalProductDiscountPrice": "1.00",
+        "quantity": 8,
+        "totalProductDiscountPrice": "6.00",
+        "totalProductNetPrice": "8.00",
         "product": {
           "id": 2,
           "name": "Orange",
           "description": "A plump, juicy orange from the orange groves at Morales Farms",
           "price": "1.00",
-          "dateCreated": "2022-12-04 16:16:30",
-          "dateModified": "2022-12-04 16:16:30"
-        },
-        "totalProductNetPrice": "1.00"
+          "dateCreated": "2022-12-04 16:49:10",
+          "dateModified": "2022-12-04 16:49:10"
+        }
       }
     ],
-    "dateCreated": "2022-12-04 16:16:30",
-    "dateModified": "2022-12-04 16:16:30",
-    "totalOrderNetPrice": "2.00"
+    "dateCreated": "2022-12-04 16:54:39",
+    "dateModified": "2022-12-04 16:54:39",
+    "totalOrderNetPrice": "16.00",
+    "totalOrderDiscountPrice": "10.00"
   },
-  "message": "Successfully retrieved order.",
-  "status": 200
-
+  "message": "Successfully created order.",
+  "status": 201
+}
 ```
 #
 `POST /api/order`
