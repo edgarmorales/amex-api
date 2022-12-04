@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -21,9 +22,11 @@ public class OrderItemServiceImpl implements OrderItemService {
     }
 
     @Override
-    public OrderItem updateOrder(OrderItem otherOrderItem, OrderItemPk orderItemPk) {
+    public OrderItem updateOrderItem(OrderItem otherOrderItem, OrderItemPk orderItemPk) {
         OrderItem orderItem = orderItemRepository.findById(orderItemPk).get();
-        // update the orderItem
+        if (Objects.nonNull(otherOrderItem) && otherOrderItem.getQuantity() > 0) {
+            orderItem.setQuantity(otherOrderItem.getQuantity());
+        }
         return orderItemRepository.save(orderItem);
     }
 

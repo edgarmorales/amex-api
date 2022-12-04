@@ -10,7 +10,7 @@ public interface OrderItemService {
 
     OrderItem saveOrderItem(OrderItem orderItem);
 
-    OrderItem updateOrder(OrderItem orderItem, OrderItemPk orderItemPk);
+    OrderItem updateOrderItem(OrderItem orderItem, OrderItemPk orderItemPk);
 
     Optional<OrderItem> fetchOrderItemById(OrderItemPk orderItemPk);
 
