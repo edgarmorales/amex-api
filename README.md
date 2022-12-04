@@ -354,7 +354,35 @@ The product service includes methods to create, edit, view and delete products.
  # add details
 ```
 
-#
+# Special Offers / Discounts
+Offers are calculated and applied dynamically on response render time via `com.amex.api.utils.OrderItemUtils` 
+[here](https://github.com/edgarmorales/amex-api/blob/main/src/main/java/com/amex/api/utils/OrderItemUtils.java#L12-L34):
+```java
+
+public static BigDecimal CalculateDiscountPrice(Product product, Integer quantity) {
+
+    BigDecimal price = product.getPrice();
+
+    return switch (product.getName()) {
+        /**
+        * If the product is an apple, then apply a "2 for 1" discount strategy
+        * against the requested quantity and return a final discount price.
+        */
+        case PRODUCT_NAME_APPLE -> CalculateTwoForOnePriceStrategy(quantity, price);
+        /**
+        * If the product is an Orange, then apply the "3 for the price of 2"
+        * discount strategy against the requested quantity and return a final
+        * discount price.
+        */
+        case PRODUCT_NAME_ORANGE -> CalculateThreeForTwoPriceStrategy(quantity, price);
+        /**
+        * Otherwise, return standard net price.
+        */
+        default -> CalculateNetPriceStrategy(quantity, price);
+    };
+}
+
+```
 
 # Testing
 Unit tests as well as integration tests are located within the `src/test/java/com/amex/api` directory.
